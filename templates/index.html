@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Painter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🖌️ Virtual Painter</h1>
+        <div class="video-container">
+            <img src="{{ url_for('video_feed') }}" width="720" height="480" alt="Live Video Feed">
+        </div>
+        <p>✋ Raise your fingers to paint!</p>
+        <button onclick="stopStream()">🛑 Stop Drawing</button>
+    </div>
+
+    <script>
+        function stopStream() {
+            window.location.href = '/stop';  // You can change this or add logic if needed
+        }
+    </script>
+</body>
+</html>
